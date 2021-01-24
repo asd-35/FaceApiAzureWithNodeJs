@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Azure faceAPI</title>
+	
+	<hr>
+	<style>
+		.report{
+    /* Calculate the width */
+    width: calc(100% - 40px);
+    background-color:#CDEBC4;
+    color:#6D8B64;
+    
+    padding:25px 0;
+    margin: 0 auto;
+}
+	</style>	
+	
+</head>
+<body>
+	
+	<p>
+		Hello.
+		Test my template app with a picture.
+		Here is some links to test my app. <br>
+		4 people standing - https://i.sozcu.com.tr/wp-content/uploads/2020/08/19/iecrop/harry-potter-reuters_16_9_1597845337-880x495.jpg <br>
+		Picture of Ada Lovelace - https://t1.gstatic.com/images?q=tbn:ANd9GcQbbmo6z7LuG4Z8ueXsWVWaLW4uYzjIn-LGqM7ZaxUzb9fiG7p7zFol-I_XMGZV
+	</p>
+	<% if(raw != undefined) { %>
+		<% var count = 0; %>
+		<%  raw.forEach (person => { %>
+		<div class="report">
+			<ul>
+				<li>Face id = <%= person["faceId"] %></li>
+				<li>Age = <%= person["faceAttributes"]["age"] %></li>
+				<li>Gender = <%= person["faceAttributes"]["gender"] %></li>
+				<li>Hair = <%= JSON.stringify(person["faceAttributes"]["hair"]) %></li>
+				<li>Emotions = <%= JSON.stringify(person["faceAttributes"]["emotion"]) %></li>
+				<li>Glasses = <%= person["faceAttributes"]["glasses"] %></li>
+			  </ul>
+			<%count++;%>
+	   </div>
+	   
+	<%  }) %>
+	<h3 style="color: red;">Person Count on picture given is : <%= count%></h3>
+	<%count = 0;%>
+	  <% } %>
+	<h2>Give us and URL of a face/faces</h2>
+
+            
+            <form  action="/" method="POST">
+              <div>
+        
+		        <label for="requrl">Picture URL</label>
+		        <input type="text" name="requrl">
+		        
+		      	</div>
+		    <br>
+	  		<button id="check">Analyze Your Picture!</button>
+            </form>
+			<br>
+			<div>
+				<img src="<%=url_pic %>" width="500" height="500">
+				<textarea readonly id="json" rows="33" cols="90">
+					<%=text_json %>
+					
+					</textarea>
+			</div>
+		<script>
+		
+		</script>
+	
+</body>
+</html>

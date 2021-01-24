@@ -1,0 +1,19 @@
+{
+  "name": "assigment5",
+  "version": "1.0.0",
+  "description": "cmpe363 assigment 5",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@azure/cognitiveservices-face": "^4.1.0",
+    "@azure/ms-rest-azure-js": "^2.0.2",
+    "ejs": "^3.1.5",
+    "express": "^4.17.1",
+    "morgan": "^1.10.0"
+  }
+}
