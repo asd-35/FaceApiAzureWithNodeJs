@@ -33,7 +33,7 @@ app.post("/", (req,res) => {
         const cognitiveServiceCredentials = new CognitiveServicesCredentials(faceKey);
         const client = new FaceClient(cognitiveServiceCredentials, faceEndPoint);
         const options = {
-          returnFaceAttributes: ["age","gender","facialHair","glasses","emotion","hair"]
+          returnFaceAttributes: ["age","gender","facialHair","glasses","emotion","hair"] //things return here
         };
         client.face
           .detectWithUrl(url_pic, options)
