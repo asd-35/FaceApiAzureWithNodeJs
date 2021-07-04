@@ -28,8 +28,8 @@ app.post("/", (req,res) => {
     var text_json = "";
     var raw; 
     async function main() {
-        const faceKey = process.env["faceKey"] || "<keyhere>";
-        const faceEndPoint = process.env["faceEndPoint"] || "<faceendpointhere>";
+        const faceKey = process.env["faceKey"] || "facekeyhere";
+        const faceEndPoint = process.env["faceEndPoint"] || "faceendpoint";
         const cognitiveServiceCredentials = new CognitiveServicesCredentials(faceKey);
         const client = new FaceClient(cognitiveServiceCredentials, faceEndPoint);
         const options = {
